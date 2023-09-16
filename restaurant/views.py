@@ -3,9 +3,11 @@ from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework.viewsets import ModelViewSet
 
-from .models import Menu
-from .serializers import MenuSerializer
+#import models, serializers, forms
+from .models import Menu, Booking
+from .serializers import MenuSerializer, BookingSerializer
 from .forms import MenuForm
 
 from rest_framework import generics
@@ -25,3 +27,8 @@ class MenuList(generics.ListCreateAPIView):
 class SingleMenuItem(generics.RetrieveUpdateDestroyAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+
+# Booking API Views
+class BookingViewSet(ModelViewSet):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
