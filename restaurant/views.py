@@ -4,6 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
 from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
 
 #import models, serializers, forms
 from .models import Menu, Booking
@@ -19,6 +20,7 @@ def home(request):
 class MenuList(generics.ListCreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+    permission_classes = [IsAuthenticated]
     
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
