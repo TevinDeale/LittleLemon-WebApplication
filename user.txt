@@ -1,0 +1,6 @@
+SuperUser
+user: Owner
+password: Owner@123
+
+user: GeneralManager
+password: gm@12345
