@@ -84,9 +84,9 @@ DATABASES = {
         "HOST": '192.168.1.30',
         "PORT": '3306',
         "USER": 'tevin',
-        "PASSWORD": '$Tyquan2014$',
+        "PASSWORD": 'root123',
     },
-        
+    #Use the backup database if you cannot get Mysql to work. just change the alias "backup" to "default" and change the alias for mysql to "backup".    
     "backup": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "littlelemon.sqlite3",
